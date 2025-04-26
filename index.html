@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago de Suscripción</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <script defer src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Suscríbete a un Plan</h1>
+            <p class="subtitle">Elige el plan que mejor se adapte a ti y disfruta de todos los beneficios.</p>
+            <button id="toggle-dark" type="button" aria-label="Cambiar modo claro/oscuro">🌙</button>
+        </header>
+        <main class="grid-layout">
+            <form id="form-suscripcion">
+                <section class="personal-info">
+                    <h2>Información Personal</h2>
+                    <label for="nombre">👤 Nombre Completo</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    <label for="email">✉️ Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Ej: correo@ejemplo.com">
+                </section>
+                <section class="plan-selection">
+                    <h2>Selecciona tu Plan</h2>
+                    <div class="plans">
+                        <div class="plan-card">
+                            <label for="basico">
+                                <input type="radio" id="basico" name="plan">
+                                <span class="plan-title">Básico</span>
+                                <span class="plan-price">$5/mes</span>
+                                <span class="plan-desc">Acceso limitado a contenido y soporte estándar.</span>
+                            </label>
+                        </div>
+                        <div class="plan-card">
+                            <label for="premium">
+                                <input type="radio" id="premium" name="plan">
+                                <span class="plan-title">⭐ Premium</span>
+                                <span class="plan-price">$10/mes</span>
+                                <span class="plan-desc">Acceso total, soporte prioritario y contenido exclusivo.</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+                <section class="payment-details">
+                    <h2>Detalles de Pago</h2>
+                    <label for="tarjeta">💳 Número de Tarjeta</label>
+                    <input type="text" id="tarjeta" name="tarjeta" maxlength="16" required
+                        placeholder="1234 5678 9012 3456">
+                    <div class="payment-row">
+                        <div>
+                            <label for="expiracion">📅 Expiración</label>
+                            <input type="text" id="expiracion" name="expiracion" placeholder="MM/AA" required
+                                maxlength="5">
+                        </div>
+                        <div>
+                            <label for="cvc">🔒 CVC</label>
+                            <input type="text" id="cvc" name="cvc" maxlength="4" required placeholder="123">
+                        </div>
+                    </div>
+                </section>
+                <button type="submit">🛒 Pagar</button>
+                <span class="error-msg" id="success-msg"></span>
+            </form>
+        </main>
+        <aside class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+            <details>
+                <summary>¿Puedo cancelar mi suscripción en cualquier momento?</summary>
+                <p>Sí, puedes cancelar tu suscripción desde tu perfil cuando lo desees.</p>
+            </details>
+            <details>
+                <summary>¿Qué métodos de pago aceptan?</summary>
+                <p>Aceptamos tarjetas de crédito, débito y pagos electrónicos.</p>
+            </details>
+            <details>
+                <summary>¿El pago es seguro?</summary>
+                <p>Sí, usamos tecnología de cifrado para proteger tus datos.</p>
+            </details>
+        </aside>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+    background: linear-gradient(120deg, #f8fafc 60%, #e0e7ff 100%);
+    min-height: 100vh;
+}
+
+/* Mejoras visuales adicionales */
+.container {
+    background: linear-gradient(135deg, #f8fafc 70%, #e0e7ff 100%);
+    box-shadow: 0 12px 32px rgba(79, 70, 229, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 2px solid #e0e7ff;
+    padding: 40px 28px 32px 28px;
+    gap: 28px;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #4f46e5;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.1em;
+    text-shadow: 0 2px 8px #e0e7ff;
+}
+
+.subtitle {
+    color: #6366f1;
+    font-size: 1.15em;
+    margin-bottom: 1.5em;
+    opacity: 0.92;
+}
+
+.personal-info,
+.plan-selection,
+.payment-details {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.10);
+    border: 1.5px solid #e0e7ff;
+    padding: 22px 18px 16px 18px;
+    gap: 14px;
+    transition: box-shadow 0.3s, border 0.3s, transform 0.22s;
+}
+
+.personal-info:hover,
+.plan-selection:hover,
+.payment-details:hover {
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.18);
+    border: 1.5px solid #6366f1;
+    transform: translateY(-2px) scale(1.01);
+}
+
+.plan-card {
+    background: linear-gradient(90deg, #e0e7ff 80%, #6366f1 100%);
+    color: #3730a3;
+    font-weight: 500;
+    box-shadow: 0 1px 8px rgba(99, 102, 241, 0.10);
+    border: 1.5px solid #c7d2fe;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.plan-card:hover,
+.plan-card:focus-within {
+    background: linear-gradient(90deg, #6366f1 60%, #e0e7ff 100%);
+    color: #fff;
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.plan-title {
+    font-size: 1.18em;
+    font-weight: bold;
+    color: #3730a3;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+    transition: color 0.3s;
+}
+
+.plan-card:hover .plan-title,
+.plan-card:focus-within .plan-title {
+    color: #fff;
+}
+
+input[type="text"],
+input[type="email"] {
+    border: 1.7px solid #c7d2fe;
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 14px 12px;
+    font-size: 1.13em;
+    transition: border 0.2s, background 0.2s, box-shadow 0.2s, transform 0.18s;
+    box-shadow: 0 1.5px 8px rgba(99, 102, 241, 0.08);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border: 1.7px solid #6366f1;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.13);
+    outline: none;
+    transform: scale(1.03);
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #6366f1 60%, #818cf8 100%);
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.13);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s, filter 0.2s;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    padding: 16px 0;
+    font-size: 1.18em;
+    margin-top: 12px;
+    cursor: pointer;
+    filter: brightness(1);
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background: linear-gradient(90deg, #3730a3 60%, #6366f1 100%);
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.22);
+    transform: translateY(-2px) scale(1.04);
+    filter: brightness(1.08);
+}
+
+.error-msg {
+    color: #e11d48;
+    font-size: 0.97em;
+    margin-top: 2px;
+    display: block;
+    min-height: 1.2em;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        padding: 10vw 2vw 8vw 2vw;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    .plan-card {
+        min-width: 0;
+        padding: 12px 6px 10px 6px;
+    }
+
+    .payment-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+body.dark {
+    background: #18181b;
+    color: #f4f4f4;
+}
+
+body.dark .container {
+    background: #23232a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .personal-info,
+body.dark .plan-selection,
+body.dark .payment-details,
+body.dark .faq-section {
+    background: #27272a;
+    color: #f4f4f4;
+}
+
+body.dark .plan-card {
+    background: linear-gradient(90deg, #3730a3 80%, #6366f1 100%);
+    color: #fff;
+}
+
+body.dark .plan-card:hover,
+body.dark .plan-card:focus-within {
+    background: linear-gradient(90deg, #6366f1 60%, #3730a3 100%);
+}
+
+body.dark .plan-title {
+    color: #fff;
+}
+
+body.dark .plan-card:hover .plan-title,
+body.dark .plan-card:focus-within .plan-title {
+    color: #fff;
+}
+
+body.dark .faq-section {
+    background: #23232a;
+    border-color: #6366f1;
+}
+
+body.dark .progress-bar-container {
+    background: #23232a;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #f9faff;
+    border-radius: 14px;
+    box-shadow: 0 1px 6px rgba(99, 102, 241, 0.06);
+    border: 1.2px solid #e0e7ff;
+    padding: 22px 18px 16px 18px;
+    margin: 32px 0 0 0;
+    max-width: 600px;
+}
+
+.faq-section h2 {
+    font-size: 1.13em;
+    color: #3730a3;
+    margin-bottom: 10px;
+    margin-top: 0;
+    letter-spacing: 0.2px;
+}
+
+.faq-section details {
+    margin-bottom: 10px;
+}
+
+.faq-section summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: #6366f1;
+    outline: none;
+    transition: color 0.2s;
+}
+
+.faq-section details[open] summary {
+    color: #3730a3;
+}
+
+.faq-section p {
+    color: #64748b;
+    margin: 6px 0 0 0;
+    font-size: 0.98em;
+}
+
+/* Barra de progreso visual */
+.progress-bar-container {
+    width: 100%;
+    background: #e0e7ff;
+    border-radius: 8px;
+    height: 10px;
+    margin: 32px 0 0 0;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.08);
+    max-width: 600px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #6366f1 60%, #818cf8 100%);
+    border-radius: 8px;
+    transition: width 0.4s cubic-bezier(.4, 1.4, .6, 1);
+}
+
+/* Animaciones fade-in y slide para secciones y mensajes */
+.container,
+.faq-section,
+.progress-bar-container,
+.plan-card,
+.personal-info,
+.plan-selection,
+.payment-details {
+    animation: fadeIn 0.8s cubic-bezier(.4, 1.4, .6, 1) both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.error-msg,
+#success-msg {
+    animation: fadeInMsg 0.5s cubic-bezier(.4, 1.4, .6, 1);
+}
+
+@keyframes fadeInMsg {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Scrollbar personalizada */
+body::-webkit-scrollbar {
+    width: 12px;
+    background: #e0e7ff;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #6366f1 40%, #818cf8 100%);
+    border-radius: 8px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #3730a3 40%, #6366f1 100%);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* Scrollbar para Firefox */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #6366f1 #e0e7ff;
+}
